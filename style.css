@@ -72,36 +72,6 @@ p {
   margin-top: 3%;
 }
 
-.keyboard {
-  position: relative;
-}
-
-.keyboard .key {
-  width: 30px;
-  height: 30px;
-  color: black;
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  margin: 0 20px;
-  text-transform: uppercase;
-  border-radius: 3px;
-}
-
-/* .keyboard .key.active {
-    border-color: #990000;
-    color: #990000;
-    transform: scale(1.1);
-  } */
-
-.keyboard .keyboard__line {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-}
-
 .word {
   position: relative;
   white-space: nowrap;
@@ -128,17 +98,6 @@ p {
   to {
     width: 100%;
   }
-}
-
-@media screen and (min-width: 0px) and (max-width: 992px) {
-  #keyboard {
-    display: none;
-  } /* show it on small screens */
-}
-@media screen and (min-width: 993px) and (max-width: 1024px) {
-  #keyboard {
-    display: block;
-  } /* hide it elsewhere */
 }
 
 #lyricsDisplay {
