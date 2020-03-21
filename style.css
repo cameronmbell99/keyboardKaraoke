@@ -15,11 +15,10 @@ h2 {
 }
 
 body {
-  /* border-right: black solid 200px;
-        border-left: black solid 200px; */
-  border: 10px solid transparent;
-  padding: 15px;
-  background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1700px 900px;
+  background-image: url("Screen\ Shot\ 2020-03-21\ at\ 2.15.02\ PM.png");
   /* background-image: linear-gradient(red, yellow); */
 }
 

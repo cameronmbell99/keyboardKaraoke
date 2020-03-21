@@ -29,13 +29,12 @@
   </head>
 
   <body>
-    <div class="jumbotron" id="title">
-      <h1 class="display-4 font-weight-bold">
-        Keyboard Karaoke <i class="fas fa-microphone"></i>
-      </h1>
-    </div>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
 
-    <div class="jumbotron" id="songList">
+    <div id="musicPlayer"></div>
+    <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a>
+
+    <div class="jumbotron" id="songList" hidden>
       <h1 class="display-2">Karaoke Song List</h1>
       <p class="lead">
         Select your song and get typing!
@@ -143,7 +142,7 @@
       </div>
     </div>
 
-    <div class="jumbotron" id="playArea">
+    <div class="jumbotron" id="playArea" hidden>
       <h1 class="display-4">Royals - Lorde</h1>
       <p class="lead">
         This is a simple hero unit, a simple jumbotron-style component for
@@ -167,17 +166,6 @@
               I've never seen a diamond in the flesh I cut my teeth on wedding
               rings in the movies And I'm not proud of my
             </h4>
-            <!-- <p
-              data-text="I've never seen a diamond in the flesh I cut my teeth on
-            wedding rings in the movies And I'm not proud of my address, in
-            the torn up town No post code envy."
-              class="word display-6"
-              style="margin-right: 10%;"
-            >
-              I've never seen a diamond in the flesh I cut my teeth on wedding
-              rings in the movies And I'm not proud of my address, in the torn
-              up town No post code envy.
-            </p> -->
           </div>
         </div>
 
@@ -204,6 +192,32 @@
         </div>
       </div>
     </div>
-    <script></script>
+
+    <script>
+      var settings = {
+        async: true,
+        crossDomain: true,
+        url: "https://deezerdevs-deezer.p.rapidapi.com/track/518458092",
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+          "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+        }
+      };
+
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+        var player = 0;
+        $("#playAgain").on("click", function() {
+          if (player === 0) {
+            $("#musicPlayer").append(
+              `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3e477a6671b162c3d05dac2cfffbe2e7-4.mp3" type="audio/mpeg"></video>`
+            );
+            player++;
+          }
+          console.log(response.preview);
+        });
+      });
+    </script>
   </body>
 </html>
