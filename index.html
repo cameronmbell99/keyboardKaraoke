@@ -1,49 +1,141 @@
-<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/3ed87a7545.js"
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width= , initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<style>
+    <!-- Bootstrap CDN-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <title>Keyboard Karaoke</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <style>
+    body {
+      /* border-right: black solid 200px;
+          border-left: black solid 200px; */
+      border: 10px solid transparent;
+      padding: 15px;
+      background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg");
+      /* background-image: linear-gradient(red, yellow); */
+    }
+
+    .container {
+      margin-top: -35%;
+      height: 1200px;
+      background-size: cover;
+
+      background-image: linear-gradient(
+          to bottom,
+          rgba(176, 186, 243, 0.548),
+          rgba(71, 4, 226, 0.507),
+          rgba(2, 136, 2, 0.884)
+        ),
+        url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg");
+      /* background-image: url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
+      /* background-image: url(""); */
+    }
     .jumbotron {
-        text-align: center;
+      background-color: rgba(245, 245, 220, 0);
+      text-align: center;
     }
-    
+
     #home {
-        border: 1px solid grey;
-        border-radius: 5px;
+      border-radius: 5px;
+      margin-left: 20%;
+      margin-right: 20%;
     }
-    
+
     #startButton {
-        width: 100px;
+      width: 100px;
     }
-    
+
     h1 {
-        color: blue;
+      color: rgb(24, 21, 21);
     }
-</style>
 
-<body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1> Hello and Welcome to Keyboard Karaoke!</h1>
+    p {
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+  </style>
+
+  <body>
+    <iframe
+      src="http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3"
+      allow="autoplay"
+      id="audio"
+      style="display: none"
+    ></iframe>
+
+    <audio id="player" autoplay loop>
+      <source
+        src="http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+
+    <!-- <iframe
+        src="60-Seconds-Loop-2020-01-19_-_Feeling_Happy_-_FesliyanStudios.com_-_David_Renda.mp3"
+        allow="autoplay"
+        id="audio"
+        style="display: none"
+      ></iframe>
+
+      <audio id="player" autoplay loop>
+        <source
+          src="60-Seconds-Loop-2020-01-19_-_Feeling_Happy_-_FesliyanStudios.com_-_David_Renda.mp3"
+          type="audio/mp3"
+        />
+      </audio> -->
+
+    <div id="home">
+      <div class="jumbotron">
+        <h1 class="display-4 font-weight-bold">
+          Keyboard Karaoke <i class="fas fa-microphone"></i>
+        </h1>
+        <h4>These are the Rules:</h4>
+        <br />
+        <p>
+          When you press the start button you will be given a song to finish,
+          the lyrics leading up to your part
+        </p>
+        <p>will be provided but after that it's up to you to guess the rest.</p>
+        <p>Good Luck!</p>
+        <br />
+        <div>
+          <a
+            href="songPage.html"
+            type="button"
+            class="btn btn-primary"
+            id="startButton"
+          >
+            Start
+          </a>
         </div>
-        <div id="home" class="col-md-12">
-            <h2>These are the Rules: </h2>
-            <br>
-            <p>When you press the start button you will be given a song to finish, the lyrics leading up to your part</p>
-            <p> will be provided but after that it's up to you to guess the rest. </p>
-            <p>Good Luck!</p>
-        </div>
-        <br>
-        <div class="col-md-12">
-            <button type="button" class="btn btn-primary" id="startButton">Start</button>
-        </div>
+      </div>
     </div>
-</body>
 
+    <div class="container"></div>
+
+    <script></script>
+  </body>
 </html>
