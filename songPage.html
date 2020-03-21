@@ -28,60 +28,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <style>
-    body {
-      /* border-right: black solid 200px;
-          border-left: black solid 200px; */
-      border: 10px solid transparent;
-      padding: 15px;
-      background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg");
-      /* background-image: linear-gradient(red, yellow); */
-    }
-
-    #title {
-      /* background-color: rgba(245, 245, 220, 0); */
-      margin-left: 10%;
-      margin-right: 10%;
-      text-align: center;
-      background-image: url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M"),
-        url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M");
-      /* background-size: cover; */
-      background-repeat: no-repeat;
-      background-color: white;
-      background-position: right bottom, left top, bottom left;
-    }
-
-    h1 {
-      /* margin-bottom: 15%; */
-      margin-top: 5%;
-      margin-bottom: 5%;
-      color: rgb(24, 21, 21);
-    }
-
-    p {
-      margin-left: 20%;
-      margin-right: 20%;
-    }
-
-    #playArea {
-      background-color: whitesmoke;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-
-    .card {
-      margin-bottom: 3%;
-    }
-
-    .col-sm-4 {
-      /* border: black solid 1px; */
-      background-color: lightblue;
-      margin-left: 10%;
-      margin-bottom: 2%;
-      padding: 0;
-    }
-  </style>
-
   <body>
     <div class="jumbotron" id="title">
       <h1 class="display-4 font-weight-bold">
@@ -89,7 +35,7 @@
       </h1>
     </div>
 
-    <div class="jumbotron" id="playArea">
+    <div class="jumbotron" id="songList" hidden>
       <h1 class="display-2">Karaoke Song List</h1>
       <p class="lead">
         Select your song and get typing!
@@ -193,6 +139,133 @@
               </div>
             </div>
           </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="jumbotron" id="playArea">
+      <h1 class="display-4">Royals - Lorde</h1>
+      <p class="lead">
+        This is a simple hero unit, a simple jumbotron-style component for
+        calling extra attention to featured content or information.
+      </p>
+      <hr class="my-4" />
+      <div class="card text-center">
+        <!-- <img
+          style="height: 400px;"
+          class="card-img-top"
+          src="https://i.ytimg.com/vi/Vzp-7p5iD10/hqdefault.jpg"
+          alt="Card image cap"
+        /> -->
+
+        <div class="jumbotron jumbotron-fluid" id="lyricsDisplay">
+          <div class="container">
+            <h4
+              class="card-title word"
+              data-text=" I've never seen a diamond in the flesh I cut my teeth on wedding rings in the movies And I'm not proud of my address in the torn"
+            >
+              I've never seen a diamond in the flesh I cut my teeth on wedding
+              rings in the movies And I'm not proud of my
+            </h4>
+            <!-- <p
+              data-text="I've never seen a diamond in the flesh I cut my teeth on
+            wedding rings in the movies And I'm not proud of my address, in
+            the torn up town No post code envy."
+              class="word display-6"
+              style="margin-right: 10%;"
+            >
+              I've never seen a diamond in the flesh I cut my teeth on wedding
+              rings in the movies And I'm not proud of my address, in the torn
+              up town No post code envy.
+            </p> -->
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Enter Text Here</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Enter Text Here"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+        </div>
+
+        <div class="card" id="keyboard">
+          <div class="card-body">
+            <div class="container">
+              <div class="keyboard">
+                <div class="keyboard__line keyboard__line--first">
+                  <div class="key key--1">q</div>
+
+                  <div class="key key--2">w</div>
+
+                  <div class="key key--3">e</div>
+
+                  <div class="key key--4">r</div>
+
+                  <div class="key key--5">t</div>
+
+                  <div class="key key--6">y</div>
+
+                  <div class="key key--7">u</div>
+
+                  <div class="key key--8">i</div>
+
+                  <div class="key key--9">o</div>
+
+                  <div class="key key--10">p</div>
+                </div>
+
+                <div class="keyboard__line keyboard__line--second">
+                  <div class="key key--11">a</div>
+
+                  <div class="key key--12">s</div>
+
+                  <div class="key key--13">d</div>
+
+                  <div class="key key--14">f</div>
+
+                  <div class="key key--15">g</div>
+
+                  <div class="key key--16">h</div>
+
+                  <div class="key key--17">j</div>
+
+                  <div class="key key--18">k</div>
+
+                  <div class="key key--19">l</div>
+                </div>
+
+                <div class="keyboard__line keyboard__line--third">
+                  <div class="key key--20">z</div>
+
+                  <div class="key key--21">x</div>
+
+                  <div class="key key--22">c</div>
+
+                  <div class="key key--23">v</div>
+
+                  <div class="key key--24">b</div>
+
+                  <div class="key key--25">n</div>
+
+                  <div class="key key--26">m</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a href="#" class="card-link">Pause</a>
+          <a href="#" class="card-link">Play</a>
+          <a href="#" class="card-link">Restart</a>
         </div>
       </div>
     </div>

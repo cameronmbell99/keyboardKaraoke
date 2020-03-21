@@ -1,15 +1,146 @@
 h1 {
-    text-align: center;
+  text-align: center;
 }
 h2 {
-    text-align: center;
+  text-align: center;
 }
 p {
-    text-align: center;
+  text-align: center;
 }
 h2 {
-    text-align: center;
+  text-align: center;
 }
 #timerDiv {
-    text-align: center;
+  text-align: center;
+}
+
+body {
+  /* border-right: black solid 200px;
+        border-left: black solid 200px; */
+  border: 10px solid transparent;
+  padding: 15px;
+  background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg");
+  /* background-image: linear-gradient(red, yellow); */
+}
+
+#title {
+  /* background-color: rgba(245, 245, 220, 0); */
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  background-image: url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M"),
+    url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M");
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: right bottom, left top, bottom left;
+}
+
+h1 {
+  /* margin-bottom: 15%; */
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: rgb(24, 21, 21);
+}
+
+p {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#songList {
+  background-color: whitesmoke;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.card {
+  margin-bottom: 3%;
+}
+
+.col-sm-4 {
+  /* border: black solid 1px; */
+  background-color: lightblue;
+  margin-left: 10%;
+  margin-bottom: 2%;
+  padding: 0;
+}
+
+#playArea {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+
+.keyboard {
+  position: relative;
+}
+
+.keyboard .key {
+  width: 30px;
+  height: 30px;
+  color: black;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+/* .keyboard .key.active {
+    border-color: #990000;
+    color: #990000;
+    transform: scale(1.1);
+  } */
+
+.keyboard .keyboard__line {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.word {
+  position: relative;
+  white-space: nowrap;
+  color: lightblue;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+.word::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: red;
+  overflow: hidden;
+  width: 40%;
+  animation: run-text 10s infinite linear;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 1);
+}
+
+@keyframes run-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 992px) {
+  #keyboard {
+    display: none;
+  } /* show it on small screens */
+}
+@media screen and (min-width: 993px) and (max-width: 1024px) {
+  #keyboard {
+    display: block;
+  } /* hide it elsewhere */
+}
+
+#lyricsDisplay {
+  background-color: black;
 }
