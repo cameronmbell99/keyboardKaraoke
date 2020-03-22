@@ -14,10 +14,10 @@ h2 {
   text-align: center;
 }
 
-body {
+#upCloseScreen {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 1700px 900px;
+  background-size: 1700px 1000px;
   background-image: url("Screen\ Shot\ 2020-03-21\ at\ 2.15.02\ PM.png");
   /* background-image: linear-gradient(red, yellow); */
 }
@@ -39,7 +39,16 @@ h1 {
   /* margin-bottom: 15%; */
   margin-top: 5%;
   margin-bottom: 5%;
+  font-family: "Press Start 2P", cursive;
   color: rgb(24, 21, 21);
+  text-shadow: 2px 2px #ff0000;
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.2;
+  }
 }
 
 p {
@@ -47,56 +56,15 @@ p {
   margin-right: 20%;
 }
 
-#songList {
-  background-color: whitesmoke;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.card {
-  margin-bottom: 3%;
-}
-
-.col-sm-4 {
-  /* border: black solid 1px; */
-  background-color: lightblue;
-  margin-left: 10%;
-  margin-bottom: 2%;
-  padding: 0;
-}
-
 #playArea {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 3%;
+  background-color: rgba(139, 69, 19, 0);
 }
 
 .word {
-  position: relative;
-  white-space: nowrap;
   color: lightblue;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 1);
-}
-
-.word::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: red;
-  overflow: hidden;
-  width: 40%;
-  animation: run-text 10s infinite linear;
-  text-shadow: 0 0 3px rgba(255, 255, 255, 1);
-}
-
-@keyframes run-text {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
 }
 
 #lyricsDisplay {

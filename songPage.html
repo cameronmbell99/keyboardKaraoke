@@ -24,165 +24,58 @@
     />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Keyboard Karaoke</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+  <body id="upCloseScreen">
+    <!-- <div id="musicPlayer"></div>
+    <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a> -->
 
-    <div id="musicPlayer"></div>
-    <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a>
+    <div class="jumbotron" id="playArea">
+      <h1 class="display-4">Royals by Lorde</h1>
 
-    <div class="jumbotron" id="songList" hidden>
-      <h1 class="display-2">Karaoke Song List</h1>
-      <p class="lead">
-        Select your song and get typing!
-      </p>
-
-      <div class="card">
-        <div class="card-header">
-          Karaoke Pop Songs
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a href=""> Royals – Lorde</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Baby One More Time – Britney Spears</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> All About That Bass – Meghan Trainor</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Treasure – Bruno Mars</a>
-                </div>
-              </div>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          Karaoke Rock Songs
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a href=""> Creep – Radiohead</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Zombie – The Cranberries</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Under the Bridge – Red Hot Chili Peppers</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Pour Some Sugar On Me – Def Leppard</a>
-                </div>
-              </div>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          Karaoke Love Songs
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a href=""> Time After Time – Cyndi Lauper</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> That’s the Way Love Goes – Janet Jackson</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Can’t Help Falling in Love – Elvis Presley</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> She Loves You – the Beatles</a>
-                </div>
-              </div>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header">
-          Funny Karaoke Songs
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col-sm-4">
-                  <a href=""> Rock Lobster – B-52s</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> If You Like Piña Coladas – Jimmy Buffet</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Party All the Time – Eddie Murphy</a>
-                </div>
-                <div class="col-sm-4">
-                  <a href=""> Just a Friend – Biz Markie</a>
-                </div>
-              </div>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-
-    <div class="jumbotron" id="playArea" hidden>
-      <h1 class="display-4">Royals - Lorde</h1>
-      <p class="lead">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
       <hr class="my-4" />
-      <div class="card text-center">
-        <!-- <img
+
+      <!-- <img
           style="height: 400px;"
           class="card-img-top"
           src="https://i.ytimg.com/vi/Vzp-7p5iD10/hqdefault.jpg"
           alt="Card image cap"
         /> -->
 
-        <div class="jumbotron jumbotron-fluid" id="lyricsDisplay">
-          <div class="container">
-            <h4
-              class="card-title word"
-              data-text=" I've never seen a diamond in the flesh I cut my teeth on wedding rings in the movies And I'm not proud of my address in the torn"
-            >
+      <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
+        <div class="container">
+          <h4 class="card-title ">
+            <p class="word">
               I've never seen a diamond in the flesh I cut my teeth on wedding
-              rings in the movies And I'm not proud of my
-            </h4>
-          </div>
+              rings in the movies ___ ___ ___ _____ __ __ _______ , in the torn
+              up town No post code envy
+              <br />
+            </p>
+          </h4>
         </div>
+      </div>
 
-        <div class="card-body">
-          <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg"
-                >Enter Text Here</span
-              >
-            </div>
-            <input
-              type="text"
-              class="form-control"
-              aria-label="Enter Text Here"
-              aria-describedby="inputGroup-sizing-sm"
-            />
+      <div class="card-body text-center">
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg"
+              >Enter Text Here</span
+            >
           </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Enter Text Here"
+            aria-describedby="inputGroup-sizing-sm"
+          />
         </div>
 
         <div class="card-body">
@@ -218,6 +111,27 @@
           console.log(response.preview);
         });
       });
+
+      var text = $(".word")
+          .text()
+          .split(""),
+        count = text.length,
+        wrapped = "";
+
+      $.each(text, function(i, el) {
+        wrapped = wrapped.concat('<span class="letter">' + el + "</span>");
+        if (!--count) paint(wrapped, ".word", ".letter", 200);
+      });
+
+      function paint(text, spn, el, vel) {
+        $(spn).html(text);
+        $(el).each(function(i) {
+          var sp = $(this);
+          setTimeout(function() {
+            sp.css("color", "yellow");
+          }, i * vel);
+        });
+      }
     </script>
   </body>
 </html>
