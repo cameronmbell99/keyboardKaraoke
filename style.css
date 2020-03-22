@@ -85,7 +85,7 @@ p {
   font-size: 12px;
   text-align: center;
   border: red 4px solid;
-  animation: blinker 1s linear infinite;
+  /* animation: blinker 1s linear infinite; */
   background-color: rgb(13, 11, 10);
   color: yellow;
   margin-bottom: 3%;
