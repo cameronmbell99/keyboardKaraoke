@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3ed87a7545.js" crossorigin="anonymous"></script>
+
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,6 +18,8 @@
 
     <title>Keyboard Karaoke</title>
     <link rel="stylesheet" href="style.css" />
+
+    <script src="javascript.js"></script>
 
 </head>
 
@@ -41,8 +42,8 @@
         <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
             <div class="container">
                 <h4 class="card-title ">
-                    <p class="word">
-                        I've never seen a diamond in the flesh I cut my teeth on wedding rings in the movies ___ ___ ___ _____ __ __ _______ , in the torn up town No post code envy
+                    <p id="hiddenLyricalText" class="word">
+
                         <br />
                     </p>
                 </h4>
@@ -65,13 +66,13 @@
 
         <div class="card-body">
           <a href="#" class="card-link">Pause</a>
-          <a href="#" class="card-link">Play</a>
+          <a href="#" id="start" class="card-link">Play</a>
           <a href="#" class="card-link">Restart</a>
         </div>
       </div>
     </div>
 
-    <script>
+    <!-- <script>
       var settings = {
         async: true,
         crossDomain: true,
@@ -107,7 +108,7 @@
       $.each(text, function(i, el) {
         wrapped = wrapped.concat('<span class="letter">' + el + "</span>"); if (!--count) paint(wrapped, ".word", ".letter", 200); }); function paint(text, spn, el, vel) { $(spn).html(text); $(el).each(function(i) { var sp = $(this);
                     setTimeout(function() { sp.css("color", "yellow"); }, i * vel); }); }
-                    </script>
+                    </script> -->
 </body>
 
 </html>

@@ -1,39 +1,23 @@
 $(document).ready(function() {
 
-    // function searchSong() {
-
-    //     var song = $(this).attr("data-name");
-    //     var queryURL = "https://api.spotify.com/v1/search?q=guns%20n'%20roses&type=welcome%20to%20the%20jungle%2C%20guns%20n'%20roses&market=United%20States&limit=1";
-
-    //     $.ajax({
-    //         url: queryURL,
-    //         method: "GET"
-    //     }).then(function(response) {
-    //         $("#lyrics").text(JSON.stringify(response));
-    //         console.log(response);
-    //     });
-    // }
-
-    // searchSong();
-
     var lyrics = [];
-    // var Lyrics = "";
-    // var allLyrics = "";
+    var band = "Pharrell Williams";
+    var song = "Happy"
+    var startLength = 145;
 
     function getLyrics() {
 
-        var queryURL = "https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime";
+        var queryURL = "https://api.lyrics.ovh/v1/" + band + "/" + song;
 
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function(response) {
             var Lyrics = response.lyrics;
+            console.log(response.lyrics);
 
-            $("#start").on("click", function() {
-                startTimer();
-                showLyrics(Lyrics);
-            });
+            startTimer();
+            showLyrics(Lyrics);
         });
 
     }
@@ -41,8 +25,6 @@ $(document).ready(function() {
     getLyrics()
     var enter = [];
     var hiddenlyrics = [];
-
-
 
     function showLyrics(lyricsobj) {
 
@@ -58,15 +40,17 @@ $(document).ready(function() {
             }
 
         }
-        var startWord = Math.floor(Math.random() * enter.length);
+        console.log("Enter: " + enter);
+        var startWord = Math.floor(Math.random() * (enter.length - (startLength + 5))) + startLength;
         console.log(startWord);
 
+        temp = enter.slice();
 
 
         if (!startWord < enter.length - 20) {
-            hiddenlyrics = enter.slice(startWord - 20, startWord);
+            hiddenlyrics = temp.slice(startWord - 20, startWord);
         } else {
-            hiddenlyrics = enter.slice(startWord, startWord + 20);
+            hiddenlyrics = temp.slice(startWord, startWord + 20);
         }
 
         console.log("hidden Lyrics " + hiddenlyrics);
@@ -76,7 +60,6 @@ $(document).ready(function() {
         for (var i = 0; i < hiddenlyrics.length; i++) {
             for (var x = 0; x < hiddenlyrics[i].length; x++) {
                 hidnwrd2 += "_";
-                console.log(hidnwrd2);
             }
             underline.push(hidnwrd2);
             hidnwrd2 = "";
@@ -84,8 +67,25 @@ $(document).ready(function() {
         console.log("underline: " + underline);
 
 
+
+        if (!startWord < enter.length - 20) {
+            for (var i = startWord - 20; i < underline + 1; i++) {
+                temp.splice(i, 0, underline);
+            }
+        } else {
+            for (var i = startWord; i < underline + 1; i++) {
+                temp.splice(startWord, 0, underline);
+            }
+        }
+        var front = temp.slice(startWord - 5, startWord);
+        var back = temp.slice(startWord + 20, startWord + 25);
+
+        console.log(temp);
+        console.log(front);
+        console.log(back);
+
         $("#lyricalText").text(enter.join(" "));
-        $("#hiddenLyricalText").text(underline.join("  "));
+        $("#hiddenLyricalText").text(front.join(" ") + " " + underline.join("  ") + " " + back.join(" "));
 
     }
 
@@ -141,7 +141,7 @@ $(document).ready(function() {
     function count() {
         time--;
         var converted = timeConverter(time);
-        console.log(converted);
+        //console.log(converted);
 
         $("#display").text(converted);
     }
