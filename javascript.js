@@ -110,13 +110,6 @@ $(document).ready(function() {
     };
 
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
     var time = 120;
     var clockRunning = false;
 
@@ -177,19 +170,34 @@ $(document).ready(function() {
         }
     }
 
+    var incorrect = 0;
+    var correct = 0;
+
+    document.body.onkeyup = function(e) {
+        if (e.keyCode == 32) {
+            checkUSerGuess()
+
+        }
 
 
+        function checkUSerGuess() {
+            userGuess = document.getElementById("textBox").value("");
+            if (!lyrics.includes(userGuess)) {
+                incorrect++;
+            } else {
+                for (i = 0; i < lyricsArray.length; i++) {
+                    if (userGuess === lyricsArray[i]) {
+                        // whereTheBlanksGo[i] = userGuess;
+                        // lyrics.innerHTML = whereTHeBlanksGo;
+                    }
+                }
+                document.getElementById("textBox").value("");
+                correct++;
+            }
+        };
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-})
+    function GameOver() {
+        //gameOverDiv.text("Congrats! You got " + correct + "out of " + incorrect + "right! Press the button below to play a new song!")
+    }
+});
