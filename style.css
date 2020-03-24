@@ -1,4 +1,30 @@
-body {
+
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+#timerDiv {
+  text-align: center;
+}
+
+#upCloseScreen {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1700px 1000px;
+  background-image: url("Screen\ Shot\ 2020-03-21\ at\ 2.15.02\ PM.png");
+  /* background-image: linear-gradient(red, yellow); */
+}
+
+#farAwayScreen {
+
   background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -7,6 +33,31 @@ body {
 
   /* ---- older versions that we can still try ----- */
   /* border-right: black solid 275px;
+
+  border-left: black solid 275px;
+  border-bottom: black solid 100px; */
+  /* border: 10px solid transparent;
+  padding: 15px;
+  background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg"); */
+  /* background-image: linear-gradient(red, yellow); */
+}
+
+.container {
+  /* ---- older versions that we can still try ----- */
+  /* background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg"); */
+  /* background-image: linear-gradient(
+      to bottom,
+      rgba(176, 186, 243, 0.548),
+      rgba(71, 4, 226, 0.507),
+      rgba(2, 136, 2, 0.884)
+    ),
+    url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
+  /* background-image: url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
+}
+
+#welcomePage {
+  /* margin-top: 5%; */
+
       border-left: black solid 275px;
       border-bottom: black solid 100px; */
   /* border: 10px solid transparent;
@@ -29,6 +80,7 @@ body {
 /* }  */
 .jumbotron {
   margin-top: 5%;
+
   background-color: rgba(231, 16, 16, 0);
   text-align: center;
   border-radius: 50px;
@@ -36,6 +88,20 @@ body {
   margin-right: 26%;
   font-family: "Press Start 2P";
   text-shadow: 1px 1px darkgray;
+}
+
+
+#title {
+  /* background-color: rgba(245, 245, 220, 0); */
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  background-image: url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M"),
+    url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M");
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: right bottom, left top, bottom left;
 }
 
 #startButton {
@@ -63,10 +129,15 @@ body {
 }
 
 h1 {
+
+  /* margin-bottom: 15%; */
+  margin-top: 5%;
+  margin-bottom: 5%;
   font-family: "Press Start 2P", cursive;
   color: rgb(24, 21, 21);
   text-shadow: 2px 2px #ff0000;
-  animation: blinker 1s linear infinite;
+  animation: blinker 2s linear infinite;
+
 }
 
 @keyframes blinker {
@@ -74,6 +145,30 @@ h1 {
     opacity: 0.2;
   }
 }
+
+.instructions {
+  font-size: 12px;
+}
+
+p {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#playArea {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
+  background-color: rgba(139, 69, 19, 0);
+}
+
+.word {
+  color: lightblue;
+}
+
+#lyricsDisplay {
+  background-color: black;
+
 
 p {
   margin-left: 18%;
@@ -95,4 +190,5 @@ p {
 .card-body {
   text-decoration: none;
   color: yellow;
+
 }
