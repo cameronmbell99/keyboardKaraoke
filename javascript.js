@@ -69,6 +69,7 @@ $(document).ready(function() {
     getLyrics()
     var enter = [];
     var hiddenlyrics = [];
+    var underline = [];
 
 
 
@@ -99,7 +100,7 @@ $(document).ready(function() {
 
         console.log("hidden Lyrics " + hiddenlyrics);
 
-        var underline = [];
+        
         var hidnwrd2 = "";
         for (var i = 0; i < hiddenlyrics.length; i++) {
             for (var x = 0; x < hiddenlyrics[i].length; x++) {
@@ -126,14 +127,14 @@ $(document).ready(function() {
     
     document.body.onkeyup = function(e) {
       if (e.keyCode == 32) {
-        checkUSerGuess(hiddenlyrics)
+        checkUSerGuess(hiddenlyrics, underline)
         $("#textBox").val("");
         
       }
       
       var correctGuess = [];
       
-      function checkUSerGuess(event) {
+      function checkUSerGuess(event, line) {
         userGuess = $("#textBox").val().trim();
             console.log(userGuess);
             if (!event.includes(userGuess)) {
@@ -142,12 +143,16 @@ $(document).ready(function() {
               } else {
                 for (i = 0; i < event.length; i++) {
                   if (userGuess === event[i]) {
-                    correctGuess = userGuess;
+                    line[i] = event[i];
+
+                    console.log("underline " + line[i]);
+                    console.log("event " + event[i]);
                     correct++;
                     console.log("correct " + correct);
-                    console.log(correctGuess);
+                    console.log(line);
                   }
                 }
+                $("#hiddenLyricalText").text(line.join("  "));
               }
             };
           }
@@ -197,7 +202,7 @@ $(document).ready(function() {
   function count() {
     time--;
     var converted = timeConverter(time);
-    console.log(converted);
+    // console.log(converted);
     
     $("#display").text(converted);
   }
