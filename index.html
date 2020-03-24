@@ -35,12 +35,12 @@
   </head>
 
   <style>
-    body {
-      background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg");
+    #farAwayScreen {
+      /* background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg");
       background-repeat: no-repeat;
       background-position: center;
       background-color: rgb(13, 11, 10);
-      background-size: 1300px 1000px;
+      background-size: 1300px 1000px; */
 
       /* ---- older versions that we can still try ----- */
       /* border-right: black solid 275px;
@@ -64,7 +64,7 @@
         url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
       /* background-image: url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
     }
-    .jumbotron {
+    /* #welcomePage {
       margin-top: 5%;
       background-color: rgba(231, 16, 16, 0);
       text-align: center;
@@ -73,9 +73,9 @@
       margin-right: 26%;
       font-family: "Press Start 2P";
       text-shadow: 1px 1px darkgray;
-    }
+    } */
 
-    #startButton {
+    /* #startButton {
       cursor: pointer;
       position: relative;
       margin-left: 38%;
@@ -97,29 +97,29 @@
     #startButton:active {
       box-shadow: none;
       top: 6px;
-    }
+    } */
 
-    h1 {
+    /* h1 {
       font-family: "Press Start 2P", cursive;
       color: rgb(24, 21, 21);
       text-shadow: 2px 2px #ff0000;
       animation: blinker 1s linear infinite;
-    }
+    } */
 
-    @keyframes blinker {
+    /* @keyframes blinker {
       50% {
         opacity: 0.2;
       }
-    }
-
+    } */
+    /* 
     p {
       margin-left: 18%;
       margin-right: 18%;
       font-size: 12px;
-    }
+    } */
   </style>
 
-  <body>
+  <body id="farAwayScreen">
     <iframe
       src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
       allow="autoplay"
@@ -135,7 +135,7 @@
     </audio>
 
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron" id="welcomePage">
         <h1 class="display-5 font-weight-bold">
           Keyboard Karaoke
         </h1>

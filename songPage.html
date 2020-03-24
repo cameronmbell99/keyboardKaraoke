@@ -35,8 +35,8 @@
   </head>
 
   <body id="upCloseScreen">
-    <!-- <div id="musicPlayer"></div>
-    <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a> -->
+    <div id="musicPlayer"></div>
+    <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a>
 
     <div class="jumbotron" id="playArea">
       <h1 class="display-4">Royals by Lorde</h1>
@@ -106,6 +106,7 @@
             $("#musicPlayer").append(
               `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3e477a6671b162c3d05dac2cfffbe2e7-4.mp3" type="audio/mpeg"></video>`
             );
+            $("#musicPlayer").hide();
             player++;
           }
           console.log(response.preview);
