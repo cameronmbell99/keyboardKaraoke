@@ -101,12 +101,14 @@
       $.ajax(settings).done(function(response) {
         console.log(response);
         var player = 0;
+
         $("#playAgain").on("click", function() {
           if (player === 0) {
             $("#musicPlayer").append(
               `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3e477a6671b162c3d05dac2cfffbe2e7-4.mp3" type="audio/mpeg"></video>`
             );
-            $("#musicPlayer").hide();
+            // $("#musicPlayer").hide();
+            $("#musicPlayer");
             player++;
           }
           console.log(response.preview);
