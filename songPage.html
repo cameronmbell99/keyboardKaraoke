@@ -42,99 +42,50 @@
       <h1 class="display-4">Royals by Lorde</h1>
 
       <hr class="my-4" />
-
-      <!-- <img
-          style="height: 400px;"
-          class="card-img-top"
-          src="https://i.ytimg.com/vi/Vzp-7p5iD10/hqdefault.jpg"
-          alt="Card image cap"
-        /> -->
-
-      <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
-        <div class="container">
-          <h4 class="card-title ">
-            <p class="word">
-              I've never seen a diamond in the flesh I cut my teeth on wedding
-              rings in the movies ___ ___ ___ _____ __ __ _______ , in the torn
-              up town No post code envy
-              <br />
-            </p>
-          </h4>
+      <div class="beforeGame">
+        <div id="startGameTimer">
+          <p>Do you know your bands? Let's find out!</p>
+          <progress value="0" max="10" id="progressBar"></progress>
         </div>
       </div>
-
-      <div class="card-body text-center">
-        <div class="input-group input-group-lg">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg"
-              >Enter Text Here</span
-            >
+      <div class="playingTheGame" style="display: none;">
+        <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
+          <div class="container">
+            <h4 class="card-title ">
+              <p class="word">
+                I've never seen a diamond in the flesh I cut my teeth on wedding
+                rings in the movies ___ ___ ___ _____ __ __ _______ , in the
+                torn up town No post code envy
+                <br />
+              </p>
+            </h4>
           </div>
-          <input
-            type="text"
-            class="form-control"
-            aria-label="Enter Text Here"
-            aria-describedby="inputGroup-sizing-sm"
-          />
         </div>
 
-        <div class="card-body">
-          <a href="#" class="card-link">Pause</a>
-          <a href="#" class="card-link">Play</a>
-          <a href="#" class="card-link">Restart</a>
+        <div class="card-body text-center">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Enter Text Here</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Enter Text Here"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+
+          <div class="card-body">
+            <a href="#" class="card-link">Pause</a>
+            <!-- <a href="#" class="card-link">Play</a> -->
+            <a href="#" class="card-link">Restart</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <script>
-      var settings = {
-        async: true,
-        crossDomain: true,
-        url: "https://deezerdevs-deezer.p.rapidapi.com/track/518458092",
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-          "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-        }
-      };
-
-      $.ajax(settings).done(function(response) {
-        console.log(response);
-        var player = 0;
-
-        $("#playAgain").on("click", function() {
-          if (player === 0) {
-            $("#musicPlayer").append(
-              `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3e477a6671b162c3d05dac2cfffbe2e7-4.mp3" type="audio/mpeg"></video>`
-            );
-            // $("#musicPlayer").hide();
-            $("#musicPlayer");
-            player++;
-          }
-          console.log(response.preview);
-        });
-      });
-
-      var text = $(".word")
-          .text()
-          .split(""),
-        count = text.length,
-        wrapped = "";
-
-      $.each(text, function(i, el) {
-        wrapped = wrapped.concat('<span class="letter">' + el + "</span>");
-        if (!--count) paint(wrapped, ".word", ".letter", 200);
-      });
-
-      function paint(text, spn, el, vel) {
-        $(spn).html(text);
-        $(el).each(function(i) {
-          var sp = $(this);
-          setTimeout(function() {
-            sp.css("color", "yellow");
-          }, i * vel);
-        });
-      }
-    </script>
+    <script src="javascript.js"></script>
   </body>
 </html>
