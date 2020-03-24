@@ -115,11 +115,13 @@ h1 {
     opacity: 0.2;
   }
 }
+.instructions {
+  font-size: 12px;
+}
 
 p {
   margin-left: 20%;
   margin-right: 20%;
-  font-size: 12px;
 }
 
 #playArea {
