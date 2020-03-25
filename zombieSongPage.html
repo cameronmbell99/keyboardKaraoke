@@ -49,55 +49,82 @@
 
       <hr class="my-4" />
 
-      <div id="display"></div>
-      <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
-        <div class="container">
-          <h4 class="card-title ">
-            <p class="word" id="hiddenLyricalText">
-              <br />
-            </p>
-          </h4>
+      <div id="beforeGame">
+        <div id="startGameTimer">
+          <p>Do you know your bands? Let's find out!</p>
+          <p>Get ready to JAM!</p>
+          <progress value="0" max="10" id="progressBar"></progress>
+        </div>
+        <div id="hints">
+          <p id="hint1">
+            Hint: To hear the music press play and start jamming!
+          </p>
+          <p id="hint2">
+            Hint: Press space after entering lyrics in the input bar!
+          </p>
         </div>
       </div>
 
-      <div class="card-body text-center">
-        <div class="input-group input-group-lg">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-lg"
-              >Enter Text Here</span
+      <div class="playingTheGame" style="display:none">
+        <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
+          <div class="container">
+            <h5 class="card-title ">
+              <p class="word" id="hiddenLyricalText">
+                <br />
+              </p>
+            </h5>
+          </div>
+        </div>
+        <div id="display"></div>
+
+        <div id="musicPlayer"></div>
+
+        <div class="card-body text-center">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Enter Text Here</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Enter Text Here"
+              aria-describedby="inputGroup-sizing-sm"
+              id="textBox"
+            />
+          </div>
+          <div class="card-body">
+            <a href="#" class="card-link display-2" id="play">Play</a>
+            <a href="#" class="card-link" id="pause">Pause</a>
+            <br />
+            <br />
+            <a
+              id="startOver"
+              href="#"
+              class="card-link"
+              onClick="window.location.reload()"
+              style="color:red"
+              >Start Over</a
             >
           </div>
-          <input
-            type="text"
-            class="form-control"
-            aria-label="Enter Text Here"
-            aria-describedby="inputGroup-sizing-sm"
-            id="textBox"
-          />
         </div>
+      </div>
 
-        <div class="card-body">
-          <a href="#" class="card-link">Pause</a>
-          <a href="#" class="card-link" id="start">Play</a>
-          <a href="#" class="card-link">Restart</a>
+      <div id="gameOverDiv" style="display: none;">
+        <h1 class="display-4">Game Over</h1>
+
+        <div class="jumbotron jumbotron-fluid text-center" id="gameOverDisplay">
+          <div class="container">
+            <h4 class="card-title ">
+              <p id="gameOverText">
+                <br />
+              </p>
+            </h4>
+          </div>
         </div>
       </div>
     </div>
-
-    <div id="gameOverDiv" style="display: none;">
-      <h1 class="display-4">Game Over</h1>
-
-      <div class="jumbotron jumbotron-fluid text-center" id="gameOverDisplay">
-        <div class="container">
-          <h4 class="card-title ">
-            <p id="gameOverText">
-              <br />
-            </p>
-          </h4>
-        </div>
-      </div>
-    </div>
-
     <script src="javascript.js"></script>
   </body>
 </html>

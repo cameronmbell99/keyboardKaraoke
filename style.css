@@ -1,200 +1,165 @@
 h1 {
-    text-align: center;
+  text-align: center;
 }
-
 h2 {
-    text-align: center;
+  text-align: center;
 }
-
 p {
-    text-align: center;
+  text-align: center;
 }
-
 h2 {
-    text-align: center;
+  text-align: center;
 }
-
 #timerDiv {
-    text-align: center;
+  text-align: center;
 }
 
 #upCloseScreen {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1700px 1000px;
-    background-image: url("Screen\ Shot\ 2020-03-21\ at\ 2.15.02\ PM.png");
-    /* background-image: linear-gradient(red, yellow); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1700px 1000px;
+  background-image: url("Screen\ Shot\ 2020-03-21\ at\ 2.15.02\ PM.png");
 }
 
 #farAwayScreen {
-    background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgb(13, 11, 10);
-    background-size: 1300px 1000px;
-    /* ---- older versions that we can still try ----- */
-    /* border-right: black solid 275px;
-
-  border-left: black solid 275px;
-  border-bottom: black solid 100px; */
-    /* border: 10px solid transparent;
-  padding: 15px;
-  background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg"); */
-    /* background-image: linear-gradient(red, yellow); */
-}
-
-.container {
-    /* ---- older versions that we can still try ----- */
-    /* background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg"); */
-    /* background-image: linear-gradient(
-      to bottom,
-      rgba(176, 186, 243, 0.548),
-      rgba(71, 4, 226, 0.507),
-      rgba(2, 136, 2, 0.884)
-    ),
-    url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
-    /* background-image: url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
+  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(13, 11, 10);
+  background-size: 1300px 1000px;
 }
 
 #welcomePage {
-    /* margin-top: 5%; */
-    /*
-    border-left: black solid 275px;
-    border-bottom: black solid 100px;
-    */
-    /* border: 10px solid transparent;
-      padding: 15px;
-      background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg"); */
-    /* background-image: linear-gradient(red, yellow); */
+  border-left: black solid 275px;
+  border-bottom: black solid 100px;
 }
 
-
-/*
-    .container {
-      /* ---- older versions that we can still try ----- */
-
-
-/* background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg"); */
-
-
-/* background-image: linear-gradient(
-          to bottom,
-          rgba(176, 186, 243, 0.548),
-          rgba(71, 4, 226, 0.507),
-          rgba(2, 136, 2, 0.884)
-        ),
-        url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
-
-
-/* background-image: url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
-
-
-/* }  */
-
 .jumbotron {
-    background-color: rgba(231, 16, 16, 0);
-    text-align: center;
-    border-radius: 50px;
-    margin-left: 26%;
-    margin-right: 26%;
-    font-family: "Press Start 2P";
-    text-shadow: 1px 1px darkgray;
+  background-color: rgba(231, 16, 16, 0);
+  text-align: center;
+  border-radius: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: "Press Start 2P";
+  text-shadow: 1px 1px darkgray;
 }
 
 #title {
-    /* background-color: rgba(245, 245, 220, 0); */
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: center;
-    background-image: url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M"), url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M");
-    /* background-size: cover; */
-    background-repeat: no-repeat;
-    background-color: white;
-    background-position: right bottom, left top, bottom left;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  background-image: url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M"),
+    url("https://lh3.googleusercontent.com/proxy/R-jlod4fuUps4dAnj17-aJwWGeDrMrRVGgONS7c87-bcVc8isboOmYKBXyXRr0tjE6sQg9dC3y92MEb3sIgr2Ed4rMMQjw5xKSBhcOKrowZuimXKPdMCLRrsA5Z0fkpxkjidHD503gHQYa8_yTD-LaCi2cvYRsBSUO3EPLDcB22gEF3LRdQrozmRIdUwQ2O3i6-Ry3isYTNdWneAO86uv5M");
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: right bottom, left top, bottom left;
+}
+#songList {
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 #startButton {
-    cursor: pointer;
-    position: relative;
-    margin-left: 38%;
-    margin-right: 40%;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 6px rgb(0, 95, 196);
-    text-shadow: none;
+  /* justify-content: center; */
+  cursor: pointer;
+  position: relative;
+  /* margin-left: 35%;
+  margin-right: 40%; */
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 6px rgb(0, 95, 196);
+  text-shadow: none;
 }
 
 #startButton:hover {
-    box-shadow: 0 4px rgb(0, 95, 196);
-    top: 2px;
+  box-shadow: 0 4px rgb(0, 95, 196);
+  top: 2px;
 }
 
 #startButton:active {
-    box-shadow: none;
-    top: 6px;
+  box-shadow: none;
+  top: 6px;
 }
 
 h1 {
-    /* margin-bottom: 15%; */
-    margin-top: 5%;
-    margin-bottom: 5%;
-    font-family: "Press Start 2P", cursive;
-    color: rgb(24, 21, 21);
-    text-shadow: 2px 2px #ff0000;
-    animation: blinker 2s linear infinite;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(24, 21, 21);
+  text-shadow: 2px 2px #ff0000;
+  animation: blinker 2s linear infinite;
 }
 
 @keyframes blinker {
-    50% {
-        opacity: 0.2;
-    }
+  50% {
+    opacity: 0.2;
+  }
 }
 
 .instructions {
-    font-size: 12px;
+  font-size: 12px;
+}
+
+.startPlaying {
+  font-size: 25px;
 }
 
 p {
-    margin-left: 20%;
-    margin-right: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 #playArea {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 3%;
-    background-color: rgba(139, 69, 19, 0);
+  margin-left: 10%;
+  margin-right: 10%;
+
+  background-color: rgba(139, 69, 19, 0);
 }
 
 .word {
-    color: lightblue;
+  color: lightblue;
 }
 
 #lyricsDisplay {
-    background-color: black;
+  background-color: black;
 }
 
 p {
-    margin-left: 18%;
-    margin-right: 18%;
-    font-size: 12px;
+  margin-left: 18%;
+  margin-right: 18%;
 }
 
 .card {
-    font-size: 12px;
-    text-align: center;
-    border: red 4px solid;
-    /* animation: blinker 1s linear infinite; */
-    background-color: rgb(13, 11, 10);
-    color: yellow;
-    margin-bottom: 3%;
-    margin-top: 2%;
+  font-size: 12px;
+  text-align: center;
+  border: red 4px solid;
+  background-color: rgb(13, 11, 10);
+  color: yellow;
+  margin-bottom: 3%;
+  margin-top: 2%;
 }
 
 .card-body {
-    text-decoration: none;
-    color: yellow;
+  text-decoration: none;
+  color: yellow;
+}
+
+#startGameTimer {
+  margin-top: 10%;
+  font-size: 17px;
+}
+
+#progressBar {
+  margin-top: 3%;
+  width: 75%;
+  height: 7rem;
+  border: rgb(7, 7, 7) solid 5px;
+  padding: 1%;
+}
+
+progress::-webkit-progress-value {
+  background: rgb(250, 62, 62);
 }
