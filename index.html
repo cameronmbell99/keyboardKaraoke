@@ -1,203 +1,144 @@
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3ed87a7545.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/3ed87a7545.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Keyboard Karaoke</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-
-<style>
-    /* #farAwayScreen { */
-    /* background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-color: rgb(13, 11, 10);
-      background-size: 1300px 1000px; */
-    /* ---- older versions that we can still try ----- */
-    /* border-right: black solid 275px;
-      border-left: black solid 275px;
-      border-bottom: black solid 100px; */
-    /* border: 10px solid transparent;
-      padding: 15px;
-      background-image: url("https://cdn.hipwallpaper.com/i/17/48/rIV8iD.jpg"); */
-    /* background-image: linear-gradient(red, yellow);
-} */
-    /* .container {
-      /* ---- older versions that we can still try ----- */
-    /* background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/2-arcade-machine-screen-allan-swart.jpg"); */
-    /* background-image: linear-gradient(
-          to bottom,
-          rgba(176, 186, 243, 0.548),
-          rgba(71, 4, 226, 0.507),
-          rgba(2, 136, 2, 0.884)
-        ),
-        url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); */
-    /* background-image: url("https://image.freepik.com/free-vector/musical-notes-background-music-notation-sheet-sound-melody-note-symbols-illustration_102902-1011.jpg"); 
-} */
-    /* #welcomePage {
-      margin-top: 5%;
-      background-color: rgba(231, 16, 16, 0);
-      text-align: center;
-      border-radius: 50px;
-      margin-left: 26%;
-      margin-right: 26%;
-      font-family: "Press Start 2P";
-      text-shadow: 1px 1px darkgray;
-    } */
-    /* #startButton {
-      cursor: pointer;
-      position: relative;
-      margin-left: 38%;
-      margin-right: 40%;
-      color: black;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0 6px rgb(0, 95, 196);
-      text-shadow: none;
-    }
-
-    #startButton:hover {
-      box-shadow: 0 4px rgb(0, 95, 196);
-      top: 2px;
-    }
-
-    #startButton:active {
-      box-shadow: none;
-      top: 6px;
-    } */
-    /* h1 {
-      font-family: "Press Start 2P", cursive;
-      color: rgb(24, 21, 21);
-      text-shadow: 2px 2px #ff0000;
-      animation: blinker 1s linear infinite;
-    } */
-    /* @keyframes blinker {
-      50% {
-        opacity: 0.2;
-      }
-    } */
-    /* 
-    p {
-      margin-left: 18%;
-      margin-right: 18%;
-      font-size: 12px;
-    } */
-</style>
-
-<body id="farAwayScreen">
-    <iframe src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-    <audio id="player" autoplay loop>
-    <source
+  <body id="farAwayScreen">
+    <iframe
       src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
-      type="audio/mp3"
-    />
-  </audio>
+      allow="autoplay"
+      id="audio"
+      style="display: none"
+    ></iframe>
+    <audio id="player" autoplay loop>
+      <source
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+        type="audio/mp3"
+      />
+    </audio>
 
     <div class="container " id="titleInstructions">
-        <div class="jumbotron">
+      <div class="jumbotron">
+        <h1 class="display-5 font-weight-bold">
+          Keyboard Karaoke
+        </h1>
+        <br />
+        <h5>These are the Rules:</h5>
+        <br />
 
-            <h1 class="display-5 font-weight-bold">
-                Keyboard Karaoke
-            </h1>
-            <br />
-            <h5>These are the Rules:</h5>
-            <br />
+        <p class="instructions">
+          When you press the start button you will be given a song to finish,
+        </p>
+        <p class="instructions">
+          the lyrics leading up to your part will be provided but after that
+          it's up to you to guess the rest.
+        </p>
+        <p class="instructions">Good Luck!</p>
 
-            <p class="instructions">
-                When you press the start button you will be given a song to finish,
-            </p>
-            <p class="instructions">
-                the lyrics leading up to your part will be provided but after that it's up to you to guess the rest.
-            </p>
-            <p class="instructions">Good Luck!</p>
-
-            <div>
-                <a href="#" type="button" class="btn btn-primary btn-large" id="startButton">
+        <div>
+          <a
+            href="#"
+            type="button"
+            class="btn btn-primary btn-large"
+            id="startButton"
+          >
             Start
           </a>
-            </div>
         </div>
+      </div>
     </div>
 
     <div class="container">
-        <div class="jumbotron" id="songList">
-            <h1 class="display-5 font-weight-bold" id="songTitle">
-                Song Selection
-            </h1>
-            <br />
-            <h5>Pick to start jamming:</h5>
-            <div class="container">
-                <div>
-                    <div class="card">
-                        <a href="songPage.html">
-                            <div class="card-body">
-                                Royals by Lorde
-                            </div>
-                        </a>
-                    </div>
+      <div class="jumbotron" id="songList">
+        <h1 class="display-5 font-weight-bold" id="songTitle">
+          Song Selection
+        </h1>
+        <br />
+        <h5>Pick to start jamming:</h5>
+        <div class="container">
+          <div>
+            <div class="card">
+              <a href="songPage.html">
+                <div class="card-body">
+                  Royals by Lorde
                 </div>
-                <div>
-                    <div class="card">
-                        <a href="songPage.html">
-                            <div class="card-body">
-                                Zombie by The Cranberries
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <div class="card">
-                        <a href="songPage.html">
-                            <div class="card-body">
-                                Time After Time by Cyndi Lauper
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <div class="card">
-                        <a href="songPage.html">
-                            <div class="card-body">
-                                Rock Lobster by B-52s
-                            </div>
-                        </a>
-                    </div>
-                </div>
+              </a>
             </div>
+          </div>
+          <div>
+            <div class="card">
+              <a href="zombieSongPage.html">
+                <div class="card-body">
+                  Zombie by The Cranberries
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <a href="timeSongPage.html">
+                <div class="card-body">
+                  Time After Time by Cyndi Lauper
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <a href="lobsterSongPage.html">
+                <div class="card-body">
+                  Rock Lobster by B-52s
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <script>
-        $(document).ready(function() {
-            $("#titleInstructions").show();
-            $("#songList").hide();
-            $("#startButton").click(function() {
-                $("#songList").show();
-                $("#titleInstructions").hide();
-            });
-
-            // $("#show").click(function() {
-            //   $("p").show();
-            // });
+      $(document).ready(function() {
+        $("#titleInstructions").show();
+        $("#songList").hide();
+        $("#startButton").click(function() {
+          $("#songList").show();
+          $("#titleInstructions").hide();
         });
-    </script>
-</body>
 
+        // $("#show").click(function() {
+        //   $("p").show();
+        // });
+      });
+    </script>
+  </body>
 </html>
