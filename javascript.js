@@ -156,32 +156,15 @@ $(document).ready(function() {
     }
   };
 });
+// --------- End of document ready ----------
 
 // ------------ PROGRESS BAR -------------------
-
-var timeleft = 2;
-var startGameTimer = setInterval(function() {
-  if (timeleft === 0) {
-    $(".playingTheGame").show();
-    $(".beforeGame").hide();
-    $("#musicPlayer").append(
-      `<audio controls="" autoplay name="media"><source src="https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3" type="audio/mpeg"></audio>`
-    );
-
-    clearInterval(startGameTimer);
-  }
-
-  document.getElementById("progressBar").value = 10 - timeleft;
-  timeleft -= 1;
-}, 1000);
-
-// ------- ME TRYING TO GET IT TO WORK ----------
 
 // var timeleft = 2;
 // var startGameTimer = setInterval(function() {
 //   if (timeleft === 0) {
-//     $(".playingTheGame").show();
-//     $(".beforeGame").hide();
+//     $("#playingTheGame").show();
+//     $("#beforeGame").hide();
 
 //     clearInterval(startGameTimer);
 //   }
@@ -190,32 +173,43 @@ var startGameTimer = setInterval(function() {
 //   timeleft -= 1;
 // }, 1000);
 
-// var settings = {
-//   async: true,
-//   crossDomain: true,
-//   url: "https://deezerdevs-deezer.p.rapidapi.com/track/518458092",
-//   method: "GET",
-//   headers: {
-//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-//     "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-//   }
-// };
+// ------- ME TRYING TO GET IT TO WORK ----------
 
-// $.ajax(settings).done(function(response) {
-//   console.log(response);
-//   var player = 0;
+var timeleft = 2;
+var startGameTimer = setInterval(function() {
+  if (timeleft === 0) {
+    $("#playingTheGame").show();
+    $("#beforeGame").hide();
 
-//   function musicPlayer() {
-//     if ($(".beforeGame").css("display") == "none") {
-//       $("#musicPlayer").append(
-//         `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3e477a6671b162c3d05dac2cfffbe2e7-4.mp3" type="audio/mpeg"></video>`
-//       );
-//       player++;
-//     }
-//     console.log(response.preview);
-//   }
-//   musicPlayer();
-// });
+    var audioElement = document.createElement("audio");
+
+    audioElement.setAttribute(
+      "src",
+      "https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3"
+    );
+
+    audioElement.addEventListener(
+      "ended",
+      function() {
+        this.play();
+      },
+      false
+    );
+
+    $("#play").click(function() {
+      audioElement.play();
+    });
+
+    $("#pause").click(function() {
+      audioElement.pause();
+    });
+
+    clearInterval(startGameTimer);
+  }
+
+  document.getElementById("progressBar").value = 10 - timeleft;
+  timeleft -= 1;
+}, 1000);
 
 // __________TEST API _______
 
@@ -247,117 +241,121 @@ var startGameTimer = setInterval(function() {
 //   });
 // });
 
-// ------------- LORED API DATA --------------------
+// ------------- Happy API DATA --------------------
 
-var settings = {
-  async: true,
-  crossDomain: true,
-  url: "https://deezerdevs-deezer.p.rapidapi.com/track/70403437",
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-  }
-};
+// var settings = {
+//   async: true,
+//   crossDomain: true,
+//   url: "https://deezerdevs-deezer.p.rapidapi.com/track/394338442",
+//   method: "GET",
+//   headers: {
+//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//     "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+//   }
+// };
 
-$.ajax(settings).done(function(response) {
-  console.log(response);
-  var player = 0;
+// $.ajax(settings).done(function(response) {
+//   console.log(response);
+//   var player = 0;
 
-  $("#playAgain").on("click", function() {
-    if (player === 0) {
-      $("#musicPlayer").append(
-        `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-9.dzcdn.net/stream/c-9f7a463d7c928f017d69aaa7f2b810e8-4.mp3" type="audio/mpeg"></video>`
-      );
-      // $("#musicPlayer").hide();
-      player++;
-    }
-    console.log(response.preview);
-  });
-});
+//   $("#playAgain").on("click", function() {
+//     if (player === 0) {
+//       $("#musicPlayer").append(
+//         `<audio controls="" autoplay="" name="media" id="getMusic"><source src="https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3" type="audio/mpeg"></audio>`
+//       );
+//       // $("#musicPlayer").hide();
+//       player++;
+//     }
+//     console.log(response.preview);
+//   });
 
-// ------------- THE CRANBERRIES API DATA --------------------
+//   $("#pauseMusic").on("click", function() {
+//     $("#getMusic").pause();
+//   });
+// });
 
-var settings = {
-  async: true,
-  crossDomain: true,
-  url: "https://deezerdevs-deezer.p.rapidapi.com/track/5652656",
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-  }
-};
+// // ------------- THE CRANBERRIES API DATA --------------------
 
-$.ajax(settings).done(function(response) {
-  console.log(response);
-  var player = 0;
+// var settings = {
+//   async: true,
+//   crossDomain: true,
+//   url: "https://deezerdevs-deezer.p.rapidapi.com/track/5652656",
+//   method: "GET",
+//   headers: {
+//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//     "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+//   }
+// };
 
-  $("#playAgain").on("click", function() {
-    if (player === 0) {
-      $("#musicPlayer").append(
-        `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3f9241907a470bd4a29d2cf137dfc870-8.mp3" type="audio/mpeg"></video>`
-      );
-      // $("#musicPlayer").hide();
-      player++;
-    }
-    console.log(response.preview);
-  });
-});
+// $.ajax(settings).done(function(response) {
+//   console.log(response);
+//   var player = 0;
 
-// ------------- Cyndi Lauper API DATA --------------------
-var settings = {
-  async: true,
-  crossDomain: true,
-  url: "https://deezerdevs-deezer.p.rapidapi.com/track/608756",
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-  }
-};
+//   $("#playAgain").on("click", function() {
+//     if (player === 0) {
+//       $("#musicPlayer").append(
+//         `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3f9241907a470bd4a29d2cf137dfc870-8.mp3" type="audio/mpeg"></video>`
+//       );
+//       // $("#musicPlayer").hide();
+//       player++;
+//     }
+//     console.log(response.preview);
+//   });
+// });
 
-$.ajax(settings).done(function(response) {
-  console.log(response);
-  var player = 0;
+// // ------------- Cyndi Lauper API DATA --------------------
+// var settings = {
+//   async: true,
+//   crossDomain: true,
+//   url: "https://deezerdevs-deezer.p.rapidapi.com/track/608756",
+//   method: "GET",
+//   headers: {
+//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//     "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+//   }
+// };
 
-  $("#playAgain").on("click", function() {
-    if (player === 0) {
-      $("#musicPlayer").append(
-        `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-a.dzcdn.net/stream/c-adf8199f340d68ad579ebe31321225c8-4.mp3" type="audio/mpeg"></video>`
-      );
-      // $("#musicPlayer").hide();
-      player++;
-    }
-    console.log(response.preview);
-  });
-});
+// $.ajax(settings).done(function(response) {
+//   console.log(response);
+//   var player = 0;
 
-// ------------- B-52s API DATA --------------------
+//   $("#playAgain").on("click", function() {
+//     if (player === 0) {
+//       $("#musicPlayer").append(
+//         `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-a.dzcdn.net/stream/c-adf8199f340d68ad579ebe31321225c8-4.mp3" type="audio/mpeg"></video>`
+//       );
+//       // $("#musicPlayer").hide();
+//       player++;
+//     }
+//     console.log(response.preview);
+//   });
+// });
 
-var settings = {
-  async: true,
-  crossDomain: true,
-  url: "https://deezerdevs-deezer.p.rapidapi.com/track/882083172",
-  method: "GET",
-  headers: {
-    "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-  }
-};
+// // ------------- B-52s API DATA --------------------
 
-$.ajax(settings).done(function(response) {
-  console.log(response);
-  var player = 0;
+// var settings = {
+//   async: true,
+//   crossDomain: true,
+//   url: "https://deezerdevs-deezer.p.rapidapi.com/track/882083172",
+//   method: "GET",
+//   headers: {
+//     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//     "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+//   }
+// };
 
-  $("#playAgain").on("click", function() {
-    if (player === 0) {
-      $("#musicPlayer").append(
-        `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3" type="audio/mpeg"></video>`
-      );
-      // $("#musicPlayer").hide();
-      player++;
-    }
-    console.log(response.preview);
-  });
-});
+// $.ajax(settings).done(function(response) {
+//   console.log(response);
+//   var player = 0;
+
+//   $("#playAgain").on("click", function() {
+//     if (player === 0) {
+//       $("#musicPlayer").append(
+//         `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3" type="audio/mpeg"></video>`
+//       );
+//       // $("#musicPlayer").hide();
+//       player++;
+//     }
+//     console.log(response.preview);
+//   });
+// });
