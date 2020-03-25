@@ -138,6 +138,14 @@ h2 {
     top: 6px;
 }
 
+#gameOverText {
+    font-size: larger;
+}
+
+#gameOverButtons {
+    align-content: center;
+}
+
 h1 {
     /* margin-bottom: 15%; */
     margin-top: 5%;

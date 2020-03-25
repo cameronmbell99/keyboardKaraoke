@@ -156,64 +156,69 @@ $(document).ready(function () {
       }
     };
   }
-  
-  function GameOver() {
+
+});
+  function GameOver(correct, incorrect, total) {
     $("#playArea").hide();
     $("#gameOverDiv").show();
     if (correct < incorrect) {
-      $("#gameOverText").text("Oh No! You got " + correct + " out of " + total + "right. You got " + incorrect + "wrong....yikes")
+      $("#gameOverText").text("Oh No! You got " + correct + " out of " + total + " right. You got " + incorrect + " wrong....yikes")
     } else {
-      $("#gameOverText").text("Way to go! You got " + correct + "out of " + total + "right and only " + incorrect + "wrong! You're a rockstar!")
+      $("#gameOverText").text("Way to go! You got " + correct + " out of " + total + "right and only " + incorrect + " wrong! You're a rockstar!")
     }
-  }
-});
+  };
   ///////////////////////////////////////////////////////////timer////////////////////////////////////////////////////////
+  
   var time = 10;
   var clockRunning = false;
   
-  
   //timer reset
   function reset() {
-    
-    time = 120;
+    time = 10;
+    clockRunning = false;
+    console.log("time: " + time);
     $("#display").text("0:00");
+    startTimer();
   }
   
-  //start timer function
+  
   
   function startTimer() {
     if (!clockRunning) {
       intervalId = setInterval(count, 1000);
       clockRunning = true;
+      console.log("time: " + time);
+      
     }
   }
   
   //stops timer function
   
-  function stopTimer() {
-    
-    clearInterval(intervalId);
-    clockRunning = false;
-  }
+function stopTimer() {
   
-  function count() {
-    if (time === 0) {
-      stopTimer();
-      $("#playArea").hide();
-       $("#gameOverDiv").show();
-    } else {
+  clearInterval(intervalId);
+  clockRunning = false;
+}
+
+function count() {
+  if (time === 0) {
+    stopTimer();
+    $("#playArea").hide();
+    $("#gameOverDiv").show();
+    GameOver();
+  } else {
     time--;
     console.log(time);
     var converted = timeConverter(time);
     // console.log(converted);
-
-    $("#display").text(converted);
-    }
     
+    $("#display").text(converted);
+  }
+  
 }
 
 function timeConverter(t) {
-
+  
   var minutes = Math.floor(t / 60);
   var seconds = t - (minutes * 60);
   
