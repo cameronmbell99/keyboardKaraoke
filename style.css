@@ -148,7 +148,8 @@ p {
   font-size: 17px;
 }
 
-#progressBar {
+#progressBar,
+#progressBarZomb {
   margin-top: 3%;
   width: 75%;
   height: 7rem;
