@@ -80,6 +80,14 @@ p,
   top: 6px;
 }
 
+#gameOverText {
+    font-size: larger;
+}
+
+#gameOverButtons {
+    align-content: center;
+}
+
 h1 {
   margin-bottom: 5%;
   font-family: "Press Start 2P", cursive;
