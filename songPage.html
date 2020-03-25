@@ -1,74 +1,76 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" /> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" /> 
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  <!-- Bootstrap CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <title>Keyboard Karaoke</title>
+    <link rel="stylesheet" href="style.css" />
 
-  <title>Keyboard Karaoke</title>
-  <link rel="stylesheet" href="style.css" />
+    <script src="javascript.js"></script>
 
 </head>
 
 <body id="upCloseScreen">
-  <div id="musicPlayer"></div>
-  <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a>
+    <div id="musicPlayer"></div>
+    <a href="#" class="btn btn-primary" id="playAgain">Play Again?</a>
 
-  <div class="jumbotron" id="playArea">
-    <h1 class="display-4">Royals by Lorde</h1>
+    <div class="jumbotron" id="playArea">
+        <h1 class="display-4">Royals by Lorde</h1>
 
-    <hr class="my-4" />
+        <hr class="my-4" />
 
-    <!-- <img
+        <!-- <img
           style="height: 400px;"
           class="card-img-top"
           src="https://i.ytimg.com/vi/Vzp-7p5iD10/hqdefault.jpg"
           alt="Card image cap"
         /> -->
-      <div id="display"></div>
-    <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
-      <div class="container">
-        <h4 class="card-title ">
-          <p class="word" id="hiddenLyricalText">
-           
-            <br />
-          </p>
-        </h4>
-      </div>
-    </div>
+        <div id="display"></div>
+        <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
+            <div class="container">
+                <h4 class="card-title ">
+                    <p class="word" id="hiddenLyricalText">
 
-    <div class="card-body text-center">
-      <div class="input-group input-group-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-lg">Enter Text Here</span>
+                        <br />
+                    </p>
+                </h4>
+            </div>
         </div>
-        <input type="text" class="form-control" aria-label="Enter Text Here" aria-describedby="inputGroup-sizing-sm" id="textBox"/>
-      </div>
 
-      <div class="card-body">
-        <a href="#" class="card-link">Pause</a>
-        <a href="#" class="card-link" id="start">Play</a>
-        <a href="#" class="card-link">Restart</a>
-      </div>
+        <div class="card-body text-center">
+            <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Enter Text Here</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Enter Text Here" aria-describedby="inputGroup-sizing-sm" id="textBox" />
+            </div>
+
+            <div class="card-body">
+                <a href="#" class="card-link">Pause</a>
+                <a href="#" class="card-link" id="start">Play</a>
+                <a href="#" class="card-link">Restart</a>
+            </div>
+        </div>
     </div>
-  </div>
 
 
 
-  <div id="gameOverDiv" style="display: none;">
-    <h1 class="display-4">Game Over</h1>
+    <div id="gameOverDiv" style="display: none;">
+        <h1 class="display-4">Game Over</h1>
 
     <div class="jumbotron jumbotron-fluid text-center" id="gameOverDisplay">
       <div class="container">
@@ -84,9 +86,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="javascript.js"></script>
+    <script src="javascript.js"></script>
 
 
 </body>

@@ -1,6 +1,6 @@
 var incorrect = 0;
 var correct = 0;
-var total = 20;
+ var total = 20;
 $(document).ready(function () {
 
   var settings = {
@@ -127,7 +127,7 @@ $(document).ready(function () {
 
    incorrect = 0;
    correct = 0;
-    
+  
 
   document.body.onkeyup = function (e) {
     if (e.keyCode == 32) {
@@ -164,7 +164,6 @@ $(document).ready(function () {
 function GameOver(correct, incorrect, total) {
   $("#playArea").hide();
   $("#gameOverDiv").show();
-  console.log("constuction here: ")
   if (correct < incorrect) {
     $("#gameOverText").text("Oh No! You got " + correct + " out of " + total + " right. You got " + incorrect + " wrong....yikes")
   } else {
