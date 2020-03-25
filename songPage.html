@@ -1,10 +1,12 @@
 <html lang="en">
 
 <head>
+    <<<<<<< HEAD <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" /> =======
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" /> >>>>>>> 5f2aebf969525971a61a96c36b2a0f568669e0e7
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -42,7 +44,7 @@
         <div class="jumbotron jumbotron-fluid text-center" id="lyricsDisplay">
             <div class="container">
                 <h4 class="card-title ">
-                    <p id="hiddenLyricalText" class="word">
+                    <p class="word" id="hiddenLyricalText">
 
                         <br />
                     </p>
@@ -53,62 +55,22 @@
         <div class="card-body text-center">
             <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-lg">Enter Text Here</span
-            >
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            aria-label="Enter Text Here"
-            aria-describedby="inputGroup-sizing-sm"
-          />
-        </div>
+                    <span class="input-group-text" id="inputGroup-sizing-lg">Enter Text Here</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Enter Text Here" aria-describedby="inputGroup-sizing-sm" id="textBox" />
+            </div>
 
-        <div class="card-body">
-          <a href="#" class="card-link">Pause</a>
-          <a href="#" id="start" class="card-link">Play</a>
-          <a href="#" class="card-link">Restart</a>
+            <div class="card-body">
+                <a href="#" class="card-link">Pause</a>
+                <a href="#" class="card-link" id="start">Play</a>
+                <a href="#" class="card-link">Restart</a>
+            </div>
         </div>
-      </div>
     </div>
 
-    <!-- <script>
-      var settings = {
-        async: true,
-        crossDomain: true,
-        url: "https://deezerdevs-deezer.p.rapidapi.com/track/518458092",
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-          "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-        }
-      };
+    <script src="javascript.js"></script>
 
-      $.ajax(settings).done(function(response) {
-        console.log(response);
-        var player = 0;
-        $("#playAgain").on("click", function() {
-          if (player === 0) {
-            $("#musicPlayer").append(
-              `<video controls="" autoplay="" name="media"><source src="https://cdns-preview-3.dzcdn.net/stream/c-3e477a6671b162c3d05dac2cfffbe2e7-4.mp3" type="audio/mpeg"></video>`
-            );
-            $("#musicPlayer").hide();
-            player++;
-          }
-          console.log(response.preview);
-        });
-      });
 
-      var text = $(".word")
-          .text()
-          .split(""),
-        count = text.length,
-        wrapped = "";
-
-      $.each(text, function(i, el) {
-        wrapped = wrapped.concat('<span class="letter">' + el + "</span>"); if (!--count) paint(wrapped, ".word", ".letter", 200); }); function paint(text, spn, el, vel) { $(spn).html(text); $(el).each(function(i) { var sp = $(this);
-                    setTimeout(function() { sp.css("color", "yellow"); }, i * vel); }); }
-                    </script> -->
 </body>
 
 </html>
