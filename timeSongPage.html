@@ -108,7 +108,7 @@
       </div>
     </div>
     <div id="gameOverDiv" style="display: none;">
-      <h1 class="display-4">Game Over</h1>
+      <h1 class="display-3">Game Over</h1>
 
       <div class="jumbotron jumbotron-fluid text-center" id="gameOverDisplay">
         <div class="container">
@@ -118,8 +118,14 @@
             </p>
           </h4>
           <div id="gameOverButtons">
-            <button id="startOver">Start Over</button>
-            <button id="tryAgain">Try Again</button>
+            <a href="index.html">
+              <button id="startOver">Return to Title</button></a
+            >
+            <a href="#">
+              <button id="tryAgain" onClick="window.location.reload()">
+                Try Again
+              </button></a
+            >
           </div>
         </div>
       </div>

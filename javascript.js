@@ -2,26 +2,26 @@ var incorrect = 0;
 var correct = 0;
 var total = 20;
 var timeleft = 10;
-$(document).ready(function() {
-  var band = "Pharrell Williams";
-  var song = "Happy";
-  var startLength = 145;
 
+var band = "";
+var song = "";
+var startLength = 0;
+var Lyrics = "";
+
+$(document).ready(function() {
   function getLyrics() {
     var queryURL = "https://api.lyrics.ovh/v1/" + band + "/" + song;
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      var Lyrics = response.lyrics;
+      Lyrics = response.lyrics;
       console.log(response.lyrics);
 
-      startTimer();
       showLyrics(Lyrics);
     });
   }
 
-  getLyrics();
   var enter = [];
   var hiddenlyrics = [];
   var underline = [];
@@ -81,7 +81,7 @@ $(document).ready(function() {
     userGuess = event.key.toLowerCase();
   };
 
-  var time = 15;
+  var time = 30;
   var clockRunning = false;
 
   //timer reset
@@ -197,141 +197,6 @@ $(document).ready(function() {
     }
     console.log(correct, incorrect);
   }
-  // document.onkeyup = function(event) {
-  //   userGuess = event.key.toLowerCase();
-  // };
-
-  // function checkUserGuess() {
-  //   if (!lyrics.includes(userGuess)) {
-  //     document.getElementById("textBox").value("");
-  //     incorrect++;
-  //   } else {
-  //     for (i = 0; i < lyricsArray.length; i++) {
-  //       if (userGuess === lyricsArray[i]) {
-  //         // whereTheBlanksGo[i] = userGuess;
-  //         // lyrics.innerHTML = whereTHeBlanksGo;
-  //       }
-  //     }
-  //     document.getElementById("textBox").value("");
-  //     correct++;
-  //   }
-  // }
-
-  // var time = 120;
-  // var clockRunning = false;
-
-  // //timer reset
-  // function reset() {
-  //   time = 120;
-  //   $("#display").text("02:00");
-  // }
-
-  // //start timer function
-
-  // function startTimer() {
-  //   if (!clockRunning) {
-  //     intervalId = setInterval(count, 1000);
-  //     clockRunning = true;
-  //   }
-  // }
-
-  // //stops timer function
-
-  // function stopTimer() {
-  //   clearInterval(intervalId);
-  //   clockRunning = false;
-  // }
-
-  // function count() {
-  //   time--;
-  //   var converted = timeConverter(time);
-  //   //console.log(converted);
-
-  //   $("#display").text(converted);
-  // }
-
-  // function timeConverter(t) {
-  //   var minutes = Math.floor(t / 60);
-  //   var seconds = t - minutes * 60;
-
-  //   if (seconds < 10) {
-  //     seconds = "0" + seconds;
-  //   }
-
-  //   if (minutes === 0) {
-  //     minutes = "00";
-  //   } else if (minutes < 10) {
-  //     minutes = "0" + minutes;
-  //   }
-
-  //   return minutes + ":" + seconds;
-  // }
-
-  // function TimerExpireGameOver() {
-  //   if (time == 0) {
-  //     //link to Game Over page
-  //   }
-  // }
-
-  // var incorrect = 0;
-  // var correct = 0;
-
-  // document.body.onkeyup = function(e) {
-  //   if (e.keyCode == 32) {
-  //     checkUSerGuess(hiddenlyrics, underline);
-  //     $("#textBox").val("");
-  //   }
-
-  //   function checkUSerGuess(event, line) {
-  //     userGuess = $("#textBox")
-  //       .val()
-  //       .trim();
-  //     console.log(userGuess);
-  //     if (!event.includes(userGuess)) {
-  //       incorrect++;
-  //       console.log("incorrect " + incorrect);
-  //     } else {
-  //       for (i = 0; i < event.length; i++) {
-  //         if (userGuess === event[i]) {
-  //           line[i] = event[i];
-
-  //           console.log("underline " + line[i]);
-  //           console.log("event " + event[i]);
-  //           correct++;
-  //           console.log("correct " + correct);
-  //           console.log(line);
-  //         }
-  //       }
-  //       $("#hiddenLyricalText").text(line.join("  "));
-  //     }
-  //   }
-  // };
-
-  // function GameOver() {
-  //   $("#playArea").hide();
-  //   $("#gameOverDiv").show();
-  //   if (correct < incorrect) {
-  //     $("#gameOverText").text(
-  //       "Oh No! You got " +
-  //         correct +
-  //         " out of " +
-  //         total +
-  //         "right. You got " +
-  //         incorrect +
-  //         "wrong....yikes"
-  //     );
-  //   } else {
-  //     $("#gameOverText").text(
-  //       "Way to go! You got " +
-  //         correct +
-  //         "out of " +
-  //         total +
-  //         "right and only " +
-  //         incorrect +
-  //         "wrong! You're a rockstar!"
-  //     );
-  //   }
-  // }
 
   var trackId = "";
   var mp3Player = "";
@@ -345,6 +210,9 @@ $(document).ready(function() {
       trackId = "394338442";
       mp3Player =
         "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3";
+      band = "Pharrell Williams";
+      song = "Happy";
+      startLength = 145;
     } else if (
       window.location.pathname ===
       "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/zombieSongPage.html"
@@ -352,16 +220,31 @@ $(document).ready(function() {
       trackId = "5652656";
       mp3Player =
         "https://cdns-preview-3.dzcdn.net/stream/c-3f9241907a470bd4a29d2cf137dfc870-8.mp3";
+      band = "The Cranberries";
+      song = "Zombie";
+      startLength = 30;
     } else if (window.location.pathname === "/timeSongPage.html") {
       trackId = "608756";
       mp3Player =
         "hhttps://cdns-preview-a.dzcdn.net/stream/c-adf8199f340d68ad579ebe31321225c8-4.mp3";
-    } else if (window.location.pathname === "/lobsterSongPage.html") {
+      band = "Cyndi Lauper";
+      song = "Time After Time";
+      startLength = 145;
+    } else if (
+      window.location.pathname ===
+      "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/lobsterSongPage.html"
+    ) {
       trackId = "882083172";
       mp3Player =
         "https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3";
+      band = "B-52s";
+      song = "Rock Lobster";
+      startLength = 145;
     }
 
+    if (Lyrics.length < 1) {
+      getLyrics();
+    }
     console.log(trackId);
     console.log(mp3Player);
 
@@ -398,6 +281,7 @@ $(document).ready(function() {
         $("#play").click(function(event) {
           event.target.value;
           audioElement.play();
+          startTimer();
         });
 
         $("#pause").click(function() {

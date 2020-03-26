@@ -81,11 +81,11 @@ p,
 }
 
 #gameOverText {
-    font-size: larger;
+  font-size: larger;
 }
 
 #gameOverButtons {
-    align-content: center;
+  align-content: center;
 }
 
 h1 {
@@ -174,7 +174,9 @@ progress::-webkit-progress-value {
 }
 
 #play,
-#pause {
+#pause,
+#tryAgain,
+#startOver {
   color: rgb(3, 102, 214);
   font-size: 30px;
 }
@@ -197,4 +199,17 @@ progress::-webkit-progress-value {
 
 #hint2 {
   display: none;
+}
+
+#gameOverDiv {
+  margin-top: 5%;
+}
+
+#gameOverText {
+  margin-top: 2%;
+  font-size: larger;
+}
+#gameOverButtons {
+  align-content: center;
+  size: 25px;
 }
