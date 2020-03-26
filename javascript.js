@@ -1,6 +1,7 @@
 var incorrect = 0;
 var correct = 0;
 var total = 20;
+var timeleft = 10;
 $(document).ready(function() {
   var band = "Pharrell Williams";
   var song = "Happy";
@@ -331,23 +332,120 @@ $(document).ready(function() {
   //     );
   //   }
   // }
-});
+
+  var trackId = "";
+  var mp3Player = "";
+
+  function progressBar() {
+    console.log(window.location.pathname);
+    if (
+      window.location.pathname ===
+      "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/songPage.html"
+    ) {
+      trackId = "394338442";
+      mp3Player =
+        "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3";
+    } else if (
+      window.location.pathname ===
+      "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/zombieSongPage.html"
+    ) {
+      trackId = "5652656";
+      mp3Player =
+        "https://cdns-preview-3.dzcdn.net/stream/c-3f9241907a470bd4a29d2cf137dfc870-8.mp3";
+    } else if (window.location.pathname === "/timeSongPage.html") {
+      trackId = "608756";
+      mp3Player =
+        "hhttps://cdns-preview-a.dzcdn.net/stream/c-adf8199f340d68ad579ebe31321225c8-4.mp3";
+    } else if (window.location.pathname === "/lobsterSongPage.html") {
+      trackId = "882083172";
+      mp3Player =
+        "https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3";
+    }
+
+    console.log(trackId);
+    console.log(mp3Player);
+
+    if (timeleft == 0) {
+      $(".playingTheGame").show();
+      $("#beforeGame").hide();
+      $("#display").show();
+
+      var settings = {
+        async: true,
+        crossDomain: true,
+        url: "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId,
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+          "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+        }
+      };
+
+      $.ajax(settings).done(function(response) {
+        console.log(response);
+        var audioElement = document.createElement("audio");
+
+        audioElement.setAttribute("src", mp3Player);
+
+        audioElement.addEventListener(
+          "ended",
+          function() {
+            this.play();
+          },
+          false
+        );
+
+        $("#play").click(function(event) {
+          event.target.value;
+          audioElement.play();
+        });
+
+        $("#pause").click(function() {
+          audioElement.pause();
+        });
+      });
+    }
+
+    document.getElementById("progressBar").value = 10 - timeleft;
+    timeleft -= 1;
+  }
+
+  var currentDiv = $("#hint1");
+  var hint = 1;
+  var myInterval = setInterval(function() {
+    if (hint == 2) {
+      clearInterval(myInterval);
+    } else {
+      hint++;
+      currentDiv.hide();
+      currentDiv = currentDiv.next();
+      currentDiv.show();
+    }
+  }, 6000);
+
+  var progressBarInterval = setInterval(progressBar, 1000);
+  ////
+  if (timeleft === 0) {
+    clearInterval(progressBarInterval);
+  }
+}); /////
 
 // --------- End of document ready ----------
 
-var currentDiv = $("#hint1");
-var nextDiv,
-  hint = 1;
-var myInterval = setInterval(function() {
-  if (hint == 2) {
-    clearInterval(myInterval);
-  } else {
-    hint++;
-    currentDiv.hide();
-    currentDiv = currentDiv.next();
-    currentDiv.show();
-  }
-}, 6000);
+// var currentDiv = $("#hint1");
+// var nextDiv,
+//   hint = 1;
+// var myInterval = setInterval(function() {
+//   if (hint == 2) {
+//     clearInterval(myInterval);
+//   } else {
+//     hint++;
+//     currentDiv.hide();
+//     currentDiv = currentDiv.next();
+//     currentDiv.show();
+//     progressBar();
+//   }
+// }, 6000);
 
 // ------------ PROGRESS BAR -------------------
 
@@ -366,66 +464,96 @@ var myInterval = setInterval(function() {
 
 // ------- ME TRYING TO GET IT TO WORK ----------
 
-var timeleft = 10;
+// var timeleft = 10;
+// var trackId = "";
+// var mp3Player = "";
 
-var startGameTimer = setInterval(function() {
-  if (timeleft == 0) {
-    $(".playingTheGame").show();
-    $("#beforeGame").hide();
-    $("#display").show();
+// function progressBar() {
+//   console.log(window.location.pathname);
+//   if (
+//     window.location.pathname ===
+//     "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/songPage.html"
+//   ) {
+//     trackId = "394338442";
+//     mp3Player =
+//       "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3";
+//   } else if (
+//     window.location.pathname ===
+//     "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/zombieSongPage.html"
+//   ) {
+//     trackId = "5652656";
+//     mp3Player =
+//       "https://cdns-preview-3.dzcdn.net/stream/c-3f9241907a470bd4a29d2cf137dfc870-8.mp3";
+//   } else if (window.location.pathname === "/timeSongPage.html") {
+//     trackId = "608756";
+//     mp3Player =
+//       "hhttps://cdns-preview-a.dzcdn.net/stream/c-adf8199f340d68ad579ebe31321225c8-4.mp3";
+//   } else if (window.location.pathname === "/lobsterSongPage.html") {
+//     trackId = "882083172";
+//     mp3Player =
+//       "https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3";
+//   }
 
-    var settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://deezerdevs-deezer.p.rapidapi.com/track/394338442",
-      method: "GET",
-      headers: {
-        "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-        "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
-      }
-    };
+//   console.log(trackId);
+//   console.log(mp3Player);
 
-    $.ajax(settings).done(function(response) {
-      console.log(response);
-      var audioElement = document.createElement("audio");
+//   if (timeleft == 0) {
+//     $(".playingTheGame").show();
+//     $("#beforeGame").hide();
+//     $("#display").show();
 
-      audioElement.setAttribute(
-        "src",
-        "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3"
-      );
+//     var settings = {
+//       async: true,
+//       crossDomain: true,
+//       url: "https://deezerdevs-deezer.p.rapidapi.com/track/" + trackId,
+//       method: "GET",
+//       headers: {
+//         "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+//         "x-rapidapi-key": "86c58d10b1msh8d0d204efb10993p118dbfjsn1cf0dff99932"
+//       }
+//     };
 
-      audioElement.addEventListener(
-        "ended",
-        function() {
-          this.play();
-        },
-        false
-      );
+//     $.ajax(settings).done(function(response) {
+//       console.log(response);
+//       var audioElement = document.createElement("audio");
 
-      var happy = {
-        Happy: {
-          trackID: "394338442",
-          mp3URL:
-            "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3"
-        }
-      };
+//       audioElement.setAttribute("src", mp3Player);
 
-      $("#play").click(function(event) {
-        event.target.value;
-        audioElement.play();
-      });
+//       audioElement.addEventListener(
+//         "ended",
+//         function() {
+//           this.play();
+//         },
+//         false
+//       );
 
-      $("#pause").click(function() {
-        audioElement.pause();
-      });
-    });
+//       $("#play").click(function(event) {
+//         event.target.value;
+//         audioElement.play();
+//       });
 
-    clearInterval(startGameTimer);
-  }
+//       $("#pause").click(function() {
+//         audioElement.pause();
+//       });
+//     });
+//   }
 
-  document.getElementById("progressBar").value = 10 - timeleft;
-  timeleft -= 1;
-}, 1000);
+//   document.getElementById("progressBar").value = 10 - timeleft;
+//   timeleft -= 1;
+// }
+
+// $(location).attr("href");
+// console.log(location);
+
+// if (location === "songPage.html") {
+//   (setting.url = "https://deezerdevs-deezer.p.rapidapi.com/track/394338442"),
+//     (src =
+//       "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4");
+// } else if (location === "zombieSongPage.html") {
+//   (setting.url = "https://deezerdevs-deezer.p.rapidapi.com/track/394338442"),
+//     (src =
+//       "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4");
+// }
 
 // var zombTimeleft = 10;
 

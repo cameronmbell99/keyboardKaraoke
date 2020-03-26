@@ -42,7 +42,7 @@
 
   <body id="upCloseScreen">
     <div class="jumbotron" id="playArea">
-      <h1 class="display-4">Zombie by The Cranberries</h1>
+      <h1 class="display-4" id="trackTitle">Zombie by The Cranberries</h1>
 
       <!-- <hr class="my-4" /> -->
 
@@ -92,8 +92,8 @@
             />
           </div>
           <div class="card-body">
-            <a href="#" class="card-link display-2" id="playZombie">Play</a>
-            <a href="#" class="card-link" id="pauseZombie">Pause</a>
+            <a href="#" class="card-link display-2" id="play">Play</a>
+            <a href="#" class="card-link" id="pause">Pause</a>
             <br />
             <br />
             <a
@@ -107,21 +107,25 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="gameOverDiv" style="display: none;">
+      <h1 class="display-4">Game Over</h1>
 
-      <div id="gameOverDiv" style="display: none;">
-        <h1 class="display-4">Game Over</h1>
-
-        <div class="jumbotron jumbotron-fluid text-center" id="gameOverDisplay">
-          <div class="container">
-            <h4 class="card-title ">
-              <p id="gameOverText">
-                <br />
-              </p>
-            </h4>
+      <div class="jumbotron jumbotron-fluid text-center" id="gameOverDisplay">
+        <div class="container">
+          <h4 class="card-title ">
+            <p id="gameOverText">
+              <br />
+            </p>
+          </h4>
+          <div id="gameOverButtons">
+            <button id="startOver">Start Over</button>
+            <button id="tryAgain">Try Again</button>
           </div>
         </div>
       </div>
     </div>
+
     <script src="javascript.js"></script>
   </body>
 </html>
