@@ -203,20 +203,14 @@ $(document).ready(function() {
 
   function progressBar() {
     console.log(window.location.pathname);
-    if (
-      window.location.pathname ===
-      "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/songPage.html"
-    ) {
+    if (window.location.pathname === "/songPage.html") {
       trackId = "394338442";
       mp3Player =
         "https://cdns-preview-5.dzcdn.net/stream/c-5fe470199ecb4b094576965a3288f42b-4.mp3";
       band = "Pharrell Williams";
       song = "Happy";
       startLength = 145;
-    } else if (
-      window.location.pathname ===
-      "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/zombieSongPage.html"
-    ) {
+    } else if (window.location.pathname === "/zombieSongPage.html") {
       trackId = "5652656";
       mp3Player =
         "https://cdns-preview-3.dzcdn.net/stream/c-3f9241907a470bd4a29d2cf137dfc870-8.mp3";
@@ -230,10 +224,7 @@ $(document).ready(function() {
       band = "Cyndi Lauper";
       song = "Time After Time";
       startLength = 145;
-    } else if (
-      window.location.pathname ===
-      "/Users/niasha/Desktop/U%20of%20A%20Bootcamp/Homework/First-Group-Project/keyboardKaraoke/lobsterSongPage.html"
-    ) {
+    } else if (window.location.pathname === "/lobsterSongPage.html") {
       trackId = "882083172";
       mp3Player =
         "https://cdns-preview-c.dzcdn.net/stream/c-ce054ab331a0bf0fece4cfc1fb7a72b6-8.mp3";
